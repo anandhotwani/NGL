@@ -95,7 +95,7 @@ void Shader::compile() noexcept
     {
       std::cerr<<"Shader compile failed or had warnings \n";
       printInfoLog(m_shaderHandle);
-      exit(EXIT_FAILURE);
+      //exit(EXIT_FAILURE);
     }
   }
   m_compiled=true;
@@ -114,7 +114,7 @@ void Shader::load( std::string _name ) noexcept
   if (!shaderSource.is_open())
   {
    std::cerr<<"File not found "<<_name.c_str()<<"\n";
-   exit(EXIT_FAILURE);
+   //exit(EXIT_FAILURE);
   }
   // now read in the data
   m_source =  std::string((std::istreambuf_iterator<char>(shaderSource)), std::istreambuf_iterator<char>());

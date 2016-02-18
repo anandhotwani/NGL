@@ -126,7 +126,7 @@ void ShaderProgram::link() noexcept
     if( infologLength == GL_FALSE)
     {
       std::cerr<<"Program link failed exiting \n";
-      exit(EXIT_FAILURE);
+      //exit(EXIT_FAILURE);
     }
   }
 
