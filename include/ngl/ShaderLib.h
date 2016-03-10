@@ -601,7 +601,12 @@ public :
   /// @param[in] _v0 the Mat4 value of the parameter to set
   //----------------------------------------------------------------------------------------------------------------------
   void setRegisteredUniform(const std::string &_paramName,Mat4 _v0) noexcept;
-
+  
+  //----------------------------------------------------------------------------------------------------------------------
+  /// @brief method to return a shader ID
+  /// @param _shaderName the name of the shader who's ID to return
+  //----------------------------------------------------------------------------------------------------------------------
+  GLuint getShaderID(const std::string &_shaderName);
 
 protected:
 

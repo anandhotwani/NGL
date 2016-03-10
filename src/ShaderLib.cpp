@@ -896,7 +896,21 @@ void ShaderLib::setRegisteredUniform(const std::string &_paramName,Mat4 _v0) noe
   (*this)[m_currentShader]->setRegisteredUniformMatrix4fv(_paramName,1,GL_FALSE,_v0.openGL());
 }
 
-
+GLuint ShaderLib::getShaderID(const std::string &_shaderName)
+{
+  GLuint value = 0;
+  auto shader=m_shaders.find(_shaderName);
+  // make sure we have a valid shader and program
+  if(shader!=m_shaders.end() )
+  {
+    value = shader->second->getShaderHandle();
+  }
+  else
+  {
+    std::cout<<"Warning: No shader named "<< _shaderName << " in " << m_currentShader <<" shader program \n";
+  }
+  return value;
+}
 
 
 
