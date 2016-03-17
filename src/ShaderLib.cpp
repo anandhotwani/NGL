@@ -912,6 +912,22 @@ GLuint ShaderLib::getShaderID(const std::string &_shaderName)
   return value;
 }
 
+ngl::Shader* ShaderLib::getShader(const std::string &_shaderName)
+{
+  ngl::Shader* shaderPointer;
+  auto shader=m_shaders.find(_shaderName);
+  // make sure we have a valid shader and program
+  if(shader!=m_shaders.end() )
+  {
+    shaderPointer = shader->second;
+  }
+  else
+  {
+    shaderPointer = nullptr;
+    std::cout<<"Warning: No shader named "<< _shaderName << " in " << m_currentShader <<" shader program \n";
+  }
+  return shaderPointer;
+}
 
 
 } // end ngl namespace
